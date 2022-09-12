@@ -1,17 +1,23 @@
 package com.muslim.springmvc.controller;
 
+import com.muslim.springmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.muslim.springmvc.model.User;
-import com.muslim.springmvc.service.UserServiceImpl;
 
 @Controller
 public class UserController {
 
+
+    private final UserService userService;
+
     @Autowired
-    UserServiceImpl userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
 
 
     @GetMapping(value = "/")

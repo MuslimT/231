@@ -12,7 +12,7 @@ import java.util.List;
 public class UserDaoHibernate implements UserDao{
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     @Transactional
